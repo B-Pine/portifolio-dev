@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio.dev - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 18px;
+        }
+        .syntax-keyword { color: #f0b0ff; }
+        .syntax-string { color: #a7d387; }
+        .syntax-function { color: #95ccff; }
+        .syntax-comment { color: #8a919b; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #404750; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#54016d",
+                        "on-tertiary": "#163800",
+                        "tertiary-container": "#8bb56c",
+                        "on-secondary-fixed": "#330044",
+                        "on-primary-fixed-variant": "#004a75",
+                        "primary-fixed": "#cde5ff",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#a7d387",
+                        "outline-variant": "#404750",
+                        "surface-variant": "#353535",
+                        "inverse-primary": "#006399",
+                        "on-primary-container": "#004167",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#a7d387",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#303030",
+                        "surface-tint": "#95ccff",
+                        "surface-bright": "#393939",
+                        "surface-container": "#202020",
+                        "on-background": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#6d2486",
+                        "surface-container-low": "#1b1b1c",
+                        "on-secondary-container": "#e796fe",
+                        "secondary": "#f0b0ff",
+                        "primary": "#95ccff",
+                        "on-primary": "#003352",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#fad7ff",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "primary-fixed-dim": "#95ccff",
+                        "on-primary-fixed": "#001d32",
+                        "primary-container": "#61afef",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#c3f0a1",
+                        "on-surface-variant": "#c0c7d1",
+                        "on-tertiary-container": "#23460a",
+                        "on-tertiary-fixed": "#0a2100",
+                        "outline": "#8a919b",
+                        "secondary-fixed-dim": "#f0b0ff",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6d2486",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-fixed-variant": "#2b5013"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body h-screen flex flex-col overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex items-center w-full h-10 px-0 bg-[#131313] dark:bg-[#131313] docked full-width top-0 z-50">
+<div class="flex items-center gap-4 px-4 h-full">
+<span class="text-[#95ccff] font-bold tracking-tighter font-headline text-lg">Portfolio.dev</span>
+<div class="flex items-center h-full space-x-0.5">
+<div class="text-[#95ccff] border-t-2 border-[#95ccff] bg-[#0e0e0e] px-4 py-2 font-['Space_Grotesk'] text-sm tracking-tight cursor-pointer active:opacity-80">about.md</div>
+<div class="text-slate-500 hover:text-slate-300 bg-[#1b1b1c] px-4 py-2 font-['Space_Grotesk'] text-sm tracking-tight cursor-pointer hover:bg-[#2a2a2a] transition-colors active:opacity-80">projects.json</div>
+<div class="text-slate-500 hover:text-slate-300 bg-[#1b1b1c] px-4 py-2 font-['Space_Grotesk'] text-sm tracking-tight cursor-pointer hover:bg-[#2a2a2a] transition-colors active:opacity-80">skills.ts</div>
+</div>
+</div>
+<div class="ml-auto flex items-center h-full px-4 gap-4">
+<div class="bg-[#1b1b1c] rounded-lg px-3 py-1 flex items-center gap-2 w-64">
+<span class="material-symbols-outlined text-slate-500" style="font-size: 14px;">search</span>
+<span class="text-slate-500 text-xs">Search files...</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-[#95ccff]">splitscreen</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-[#95ccff]">settings</span>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar / Activity Bar & Sidebar -->
+<aside class="flex h-full docked left-0 w-64 bg-[#1b1b1c] dark:bg-[#1b1b1c] border-r-0">
+<!-- Icon Sidebar -->
+<div class="w-12 bg-[#131313] flex flex-col items-center py-4 space-y-4">
+<div class="p-2 bg-[#2a2a2a] text-[#95ccff] border-l-2 border-[#95ccff] transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<div class="p-2 text-slate-400 opacity-70 hover:bg-[#2a2a2a] hover:opacity-100 transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div class="p-2 text-slate-400 opacity-70 hover:bg-[#2a2a2a] hover:opacity-100 transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div class="p-2 text-slate-400 opacity-70 hover:bg-[#2a2a2a] hover:opacity-100 transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">extension</span>
+</div>
+<div class="mt-auto space-y-4 flex flex-col items-center pb-4">
+<div class="p-2 text-slate-400 opacity-70 hover:bg-[#2a2a2a] hover:opacity-100 transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<div class="p-2 text-slate-400 opacity-70 hover:bg-[#2a2a2a] hover:opacity-100 transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+</div>
+<!-- File Tree Explorer -->
+<div class="flex-1 flex flex-col overflow-y-auto">
+<div class="px-4 py-3 flex items-center justify-between">
+<span class="font-['Inter'] text-xs uppercase font-semibold tracking-widest text-[#95ccff]">EXPLORER</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">more_horiz</span>
+</div>
+<div class="mt-2 space-y-0.5">
+<!-- Folder -->
+<div class="flex items-center px-4 py-1 gap-2 text-on-surface hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+<span class="font-label text-sm">portfolio/</span>
+</div>
+<!-- Folder -->
+<div class="flex items-center px-6 py-1 gap-2 text-on-surface hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+<span class="font-label text-sm">src/</span>
+</div>
+<!-- Files -->
+<div class="flex items-center px-8 py-1 gap-2 bg-[#2a2a2a] text-[#95ccff] border-l-2 border-[#95ccff] cursor-pointer">
+<span class="material-symbols-outlined text-sm text-[#95ccff]">description</span>
+<span class="font-label text-sm">README.md</span>
+</div>
+<div class="flex items-center px-8 py-1 gap-2 text-slate-400 hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="font-label text-sm">about.md</span>
+</div>
+<div class="flex items-center px-8 py-1 gap-2 text-slate-400 hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm text-yellow-500">settings</span>
+<span class="font-label text-sm">projects.json</span>
+</div>
+<div class="flex items-center px-8 py-1 gap-2 text-slate-400 hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm text-[#95ccff]">code</span>
+<span class="font-label text-sm">skills.ts</span>
+</div>
+<div class="flex items-center px-8 py-1 gap-2 text-slate-400 hover:bg-[#2a2a2a] cursor-pointer">
+<span class="material-symbols-outlined text-sm text-orange-500">html</span>
+<span class="font-label text-sm">contact.html</span>
+</div>
+</div>
+<div class="mt-auto p-4">
+<button class="w-full bg-[#95ccff] text-[#003352] py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                        RESUME.PDF
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Editor Area -->
+<main class="flex-1 flex flex-col bg-[#0e0e0e] min-w-0">
+<!-- Tabs -->
+<div class="flex items-center h-9 bg-[#131313] overflow-x-auto border-b border-[#404750]/10">
+<div class="flex items-center gap-2 px-4 h-full bg-[#0e0e0e] border-t-2 border-[#95ccff] min-w-fit">
+<span class="material-symbols-outlined text-xs text-[#95ccff]">description</span>
+<span class="text-xs text-[#95ccff] font-medium">README.md</span>
+<span class="material-symbols-outlined text-xs text-slate-500 hover:bg-[#2a2a2a] rounded">close</span>
+</div>
+<div class="flex items-center gap-2 px-4 h-full bg-[#1b1b1c] opacity-60 hover:opacity-100 min-w-fit cursor-pointer">
+<span class="material-symbols-outlined text-xs">info</span>
+<span class="text-xs font-medium">about.md</span>
+<span class="material-symbols-outlined text-xs text-slate-500">close</span>
+</div>
+</div>
+<!-- Editor Content -->
+<div class="flex-1 overflow-auto p-8 font-['JetBrains_Mono'] text-sm leading-relaxed relative">
+<!-- Watermark Background Logo -->
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]">terminal</span>
+</div>
+<div class="max-w-3xl mx-auto z-10 relative">
+<div class="mb-8">
+<span class="syntax-keyword text-2xl font-bold"># Welcome to [Name]'s Portfolio</span>
+<div class="h-1 w-24 bg-[#95ccff] mt-2 rounded-full"></div>
+</div>
+<div class="space-y-6">
+<p class="text-slate-300">
+<span class="syntax-comment">// I architect digital experiences at the intersection of logic and design.</span>
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+<!-- Bento Card 1 -->
+<div class="bg-surface-container border border-[#404750]/20 p-6 rounded-xl group hover:border-[#95ccff]/40 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-[#95ccff]" data-weight="fill">developer_mode</span>
+<h3 class="font-headline font-bold text-lg">Full-Stack Logic</h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Specializing in TypeScript, Node.js, and high-performance React architectures. Clean code isn't just a preference; it's the standard.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#a7d387]">Next.js</span>
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#a7d387]">PostgreSQL</span>
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#a7d387]">Tailwind</span>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-surface-container border border-[#404750]/20 p-6 rounded-xl group hover:border-[#f0b0ff]/40 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-[#f0b0ff]" data-weight="fill">palette</span>
+<h3 class="font-headline font-bold text-lg">Visual Systems</h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Designing modular UI systems that scale. From design tokens to complex motion graphics, I build the bridge between user and data.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#f0b0ff]">Figma</span>
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#f0b0ff]">Framer</span>
+<span class="px-2 py-0.5 bg-[#0e0e0e] rounded text-[10px] text-[#f0b0ff]">D3.js</span>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-[#1b1b1c] rounded-xl p-6 border border-[#404750]/10">
+<h4 class="text-xs uppercase tracking-widest text-[#95ccff] mb-4 font-bold">Featured Project Preview</h4>
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-video bg-[#0e0e0e] rounded overflow-hidden relative group">
+<img alt="Cybersecurity dashboard interface" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="sleek modern digital dashboard with blue data visualizations and network security graphs on dark interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx3pSRVc-jwhIlPwtcRWBPvrmi5juQWQDbSJrTF-Je2dH21JhomNxpTNSo0v-DrXtBwRfnOTJ_UYDuUvxO5nOzRCOawYBbwnWHgGqArtNY4XGXQ1MCaQot-GcNguFn_Ot2W9xwe8Pb1NE10hVuCkHykkw88P6swdi7mudfjuNv99D0zga9sIo4yDp4CK8ihouB38fLlLrMrH68QaEsUJObTtEyXmmWfgr6wBYIrGh3zpYB8vaPq9qiW9CNeCgQVgRqv84ugJTaszk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2">
+<span class="text-[10px] font-bold">NetShield.js</span>
+</div>
+</div>
+<div class="aspect-video bg-[#0e0e0e] rounded overflow-hidden relative group">
+<img alt="Abstract 3D data visualization" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="vibrant abstract 3d glowing wireframe structure representing complex data mapping in a dark virtual space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQIHXfp9yI3ztd-PN-yCyacJ0ikZkrZxeIquYNDdqllsW6BGBFkGdqbxbqA8uqe0-IL9uKmJH-mM4M4kRxUnoHgEbNTOIH6eGciKWYJaibosSVmarCCTe13OBBJ_9TuDqZafUm2DprvQ209N82Yj3DjfzbSfrfBbJJFiS3AFh_qoH43NaCU4JbHu76p8gsFNV83fxOaMEQYM49n8Qcprq-F83Uft4NgsrRFbzroZqrFdwHwM7c1qNyQyXOyUosFQivGirKT3U0bi0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2">
+<span class="text-[10px] font-bold">DataSphere</span>
+</div>
+</div>
+<div class="aspect-video bg-[#0e0e0e] rounded overflow-hidden relative group">
+<img alt="Code on a screen with light leak" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="close up of lines of colorful code on a high resolution monitor with subtle purple and blue lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd4attu198Dbs97AeldP0g9G5_zs9yBA2VENN-Hyl9Vq77TX4ByXWg97I6x1CpVHrej_RDnN2IqEOBOxrRqk4YHg5yXef0GHHlI5oR8jr-dC9ImyEoYuWgXVUDJviiBUThL-bCeGXQk6Bc6YnerSPrP0tHT9TRcDsGZI6Ln2Z3ekEdVXZKkE4sGOhmQRx1PenFw5Rji0z_-AUatT0Hffk196xOkmotzVcVTFgbxKrPljLx5uElr6yOK-Tnu-WO9SVBF6EcE6OQSIc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2">
+<span class="text-[10px] font-bold">LogicCore</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Panel -->
+<div class="h-48 border-t border-[#404750]/20 bg-[#0e0e0e] flex flex-col">
+<div class="flex items-center px-4 h-8 bg-[#131313] gap-6">
+<div class="flex items-center gap-2 border-b border-[#95ccff] h-full">
+<span class="text-[11px] font-bold text-[#95ccff] uppercase tracking-wider">Terminal</span>
+</div>
+<div class="flex items-center gap-2 h-full opacity-50 hover:opacity-100 cursor-pointer">
+<span class="text-[11px] font-bold uppercase tracking-wider">Output</span>
+</div>
+<div class="flex items-center gap-2 h-full opacity-50 hover:opacity-100 cursor-pointer">
+<span class="text-[11px] font-bold uppercase tracking-wider">Debug Console</span>
+</div>
+<div class="ml-auto flex items-center gap-3">
+<span class="material-symbols-outlined text-xs">add</span>
+<span class="material-symbols-outlined text-xs">delete</span>
+<span class="material-symbols-outlined text-xs">close</span>
+</div>
+</div>
+<div class="flex-1 p-4 mono-font text-xs text-on-surface overflow-y-auto">
+<div class="mb-1 text-[#a7d387] font-bold">portfolio@dev:~$ <span class="text-white">welcome --init</span></div>
+<div class="mb-1 text-slate-400">Initializing environment... done.</div>
+<div class="mb-1 text-slate-400">Loading components... done.</div>
+<div class="mb-3 text-slate-400">Type 'help' for available commands.</div>
+<div class="flex items-center gap-2">
+<span class="text-[#a7d387] font-bold">portfolio@dev:~$</span>
+<span class="w-2 h-4 bg-[#95ccff] animate-pulse"></span>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar / Status Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-start items-center space-x-4 px-2 bg-[#0e0e0e] dark:bg-[#0e0e0e] docked full-width bottom-0 h-7 border-t border-[#404750]/15">
+<div class="text-[#95ccff] flex items-center gap-1 px-3 font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default transition-colors">
+<span class="material-symbols-outlined" style="font-size: 14px;">account_tree</span>
+<span>main*</span>
+</div>
+<div class="text-slate-400 flex items-center gap-1 px-3 font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default transition-colors">
+<span class="material-symbols-outlined" style="font-size: 14px;">code</span>
+<span>TypeScript JSX</span>
+</div>
+<div class="text-slate-400 flex items-center gap-1 px-3 font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default transition-colors">
+<span class="material-symbols-outlined" style="font-size: 14px;">check_circle</span>
+<span>UTF-8</span>
+</div>
+<div class="ml-auto flex items-center">
+<div class="px-3 flex items-center gap-1 text-slate-400 font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default">
+<span>Ln 1, Col 1</span>
+</div>
+<div class="px-3 flex items-center gap-1 text-slate-400 font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default">
+<span>Spaces: 2</span>
+</div>
+<div class="px-3 flex items-center gap-1 text-[#a7d387] font-['Inter'] text-[11px] font-medium hover:bg-[#393939] cursor-default">
+<span class="material-symbols-outlined" style="font-size: 14px;">cloud_done</span>
+<span>Synced</span>
+</div>
+</div>
+</footer>
+</body></html>

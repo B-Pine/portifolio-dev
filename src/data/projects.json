@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "pulse",
+    "name": "Pulse",
+    "tagline": "Real-time donor coordination — mobile app (planned).",
+    "description": "Pulse is a planned mobile app that connects blood donors with hospitals in real-time, enabling fast matching by blood type, location, and urgency. The current web version is a working prototype; the mobile app is the next implementation step, focused on reliability and accessibility for users on low-bandwidth connections.",
+    "techStack": ["React Native (planned)", "React", "Django", "PostgreSQL", "WebSockets"],
+    "features": [
+      "Mobile-first donor matching by blood type and proximity",
+      "Push notifications for urgent hospital requests",
+      "SMS/email fallbacks for offline donors",
+      "Donor history & eligibility tracking",
+      "Web prototype available — mobile implementation planned"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://bloodlink-pulse.netlify.app/",
+    "githubUrl": "https://github.com/b-pine",
+    "year": 2025,
+    "status": "in-progress"
+  },
+  {
+    "slug": "luxe-boutique",
+    "name": "Luxe Boutique",
+    "tagline": "Premium e-commerce platform with real-time seller dashboard.",
+    "description": "Luxe Boutique is a premium e-commerce platform with separate customer and seller experiences, real-time notifications, and a mobile-first responsive design.",
+    "techStack": ["React", "Tailwind", "WebSockets", "Node.js"],
+    "features": [
+      "Customer portal — browse products, manage cart, track orders",
+      "Seller dashboard — manage products, orders, and notifications",
+      "Real-time updates via WebSocket-based notification system",
+      "Mobile-first responsive design with a polished UI"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://luxe-boutique-track-frontend.vercel.app/",
+    "githubUrl": null,
+    "year": 2025,
+    "status": "live"
+  },
+  {
+    "slug": "gender-voice-predictor",
+    "name": "Gender Voice Predictor",
+    "tagline": "Predicts gender from voice recordings using ML.",
+    "description": "A full-stack machine learning application that predicts gender from voice recordings using audio feature extraction and classification. The system consists of a React-based frontend and a FastAPI backend with a trained machine learning model.",
+    "techStack": ["React", "TypeScript", "FastAPI", "Python", "scikit-learn"],
+    "features": [
+      "Audio feature extraction from raw voice recordings",
+      "Trained on 16,000+ voice samples",
+      "FastAPI inference endpoint with React frontend",
+      "Currently ~70% accuracy — exploring Microsoft pretrained models for improvements"
+    ],
+    "screenshots": [],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/B-Pine/gender-voice-predictor.git",
+    "year": 2025,
+    "status": "in-progress"
+  },
+  {
+    "slug": "paccy-unigate",
+    "name": "Paccy Unigate",
+    "tagline": "Scholarships, jobs, and career resources for Rwanda — in one place.",
+    "description": "A platform that helps students and graduates discover scholarships, job opportunities, and career resources in Rwanda, all in one place.",
+    "techStack": ["React", "TypeScript", "Node.js", "Tailwind"],
+    "features": [
+      "Curated scholarship listings with deadlines and eligibility",
+      "Job and internship board tailored to the Rwandan market",
+      "Career resources hub (CV tips, interview prep, guides)",
+      "Search and filtering across opportunities"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://paccyunigate.com",
+    "githubUrl": null,
+    "year": 2025,
+    "status": "live"
+  },
+  {
+    "slug": "portfolio-dev",
+    "name": "Portfolio.dev",
+    "tagline": "This site — an IDE-style interactive portfolio.",
+    "description": "An IDE-themed portfolio with a fully functional terminal, autocomplete, and command-driven navigation. Designed to feel like a real developer environment rather than a generic template.",
+    "techStack": ["React", "Vite", "Tailwind CSS", "EmailJS"],
+    "features": [
+      "Command registry pattern — add a new command in one file",
+      "Real-time autocomplete with Tab cycling",
+      "Data-driven projects & skills",
+      "Mobile fallback for unsupported viewports"
+    ],
+    "screenshots": [],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/b-pine",
+    "year": 2025,
+    "status": "live"
+  }
+]
