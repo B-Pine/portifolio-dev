@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import projects from '../data/projects.json';
 
-const VIEWS = [
-  { id: 'list', icon: 'grid_view', label: 'Grid' },
-  { id: 'tree', icon: 'folder_open', label: 'Directory' }
-];
-
 export default function ProjectsView({ onOpenProject }) {
+  const { t } = useTranslation();
   const [view, setView] = useState('list');
+  const VIEWS = [
+    { id: 'list', icon: 'grid_view', label: t('projects.grid') },
+    { id: 'tree', icon: 'folder_open', label: t('projects.directory') }
+  ];
 
   return (
     <div className="h-full overflow-auto p-8 font-mono text-sm leading-relaxed">
       <div className="max-w-6xl mx-auto pb-12">
         <div className="flex items-start justify-between mb-6 gap-4">
           <div>
-            <span className="syntax-keyword text-2xl font-bold font-headline">// projects.json</span>
+            <span className="syntax-keyword text-2xl font-bold font-headline">// {t('projects.title')}</span>
             <div className="h-1 w-16 bg-primary mt-2 rounded-full" />
           </div>
           <div className="flex bg-surface-container rounded-md p-1 shrink-0">
@@ -42,7 +43,7 @@ export default function ProjectsView({ onOpenProject }) {
         </div>
 
         <div className="syntax-comment mb-4">
-          // {projects.length} entries — click to open or run{' '}
+          // {projects.length} {t('projects.entries')}{' '}
           <span className="syntax-function">open &lt;slug&gt;</span>
         </div>
 
@@ -132,7 +133,7 @@ function TreeView({ onOpen }) {
             {expanded && (
               <div className="ml-10 mb-2 mt-1 border-l border-outline-variant/30 pl-3 space-y-0.5 animate-fade-in">
                 <FileRow icon="description" iconClass="text-primary" name="README.md"
-                         onClick={() => onOpen(p.slug)} hint="open detail view" />
+                         onClick={() => onOpen(p.slug)} hint="open" />
                 <Meta label="name" value={p.name} />
                 <Meta label="tagline" value={p.tagline} />
                 <Meta label="stack" value={p.techStack.join(', ')} />

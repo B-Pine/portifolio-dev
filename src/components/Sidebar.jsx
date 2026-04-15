@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { profile } from '../data/profile.js';
 
 const FILES = [
@@ -11,6 +12,7 @@ const FILES = [
 ];
 
 export default function Sidebar({ activeTabId, onOpenFile }) {
+  const { t } = useTranslation();
   return (
     <aside className="flex h-full w-64 bg-surface-container-low shrink-0">
       <div className="w-12 bg-surface flex flex-col items-center py-4 space-y-4">
@@ -33,7 +35,7 @@ export default function Sidebar({ activeTabId, onOpenFile }) {
       <div className="flex-1 flex flex-col overflow-y-auto">
         <div className="px-4 py-3 flex items-center justify-between">
           <span className="font-label text-xs uppercase font-semibold tracking-widest text-primary">
-            EXPLORER
+            {t('sidebar.explorer').toUpperCase()}
           </span>
           <span className="material-symbols-outlined text-on-surface-variant text-sm">more_horiz</span>
         </div>

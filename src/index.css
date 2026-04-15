@@ -2,15 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+:root, [data-theme="dark"] {
+  --color-primary: 149 204 255;
+  --color-primary-container: 97 175 239;
+  --color-on-primary: 0 51 82;
+  --color-secondary: 240 176 255;
+  --color-on-secondary: 84 1 109;
+  --color-tertiary: 167 211 135;
+  --color-on-tertiary: 22 56 0;
+  --color-background: 19 19 19;
+  --color-surface: 19 19 19;
+  --color-surface-dim: 19 19 19;
+  --color-surface-bright: 57 57 57;
+  --color-surface-container-lowest: 14 14 14;
+  --color-surface-container-low: 27 27 28;
+  --color-surface-container: 32 32 32;
+  --color-surface-container-high: 42 42 42;
+  --color-surface-container-highest: 53 53 53;
+  --color-on-surface: 229 226 225;
+  --color-on-surface-variant: 192 199 209;
+  --color-outline: 138 145 155;
+  --color-outline-variant: 64 71 80;
+  --color-error: 255 180 171;
+  --color-syntax-keyword: 240 176 255;
+  --color-syntax-string: 167 211 135;
+  --color-syntax-function: 149 204 255;
+  --color-syntax-comment: 138 145 155;
+  --scrollbar-track: #0e0e0e;
+  --scrollbar-thumb: #353535;
+  --scrollbar-thumb-hover: #404750;
+}
+
+[data-theme="light"] {
+  --color-primary: 0 102 165;
+  --color-primary-container: 198 228 255;
+  --color-on-primary: 255 255 255;
+  --color-secondary: 130 67 153;
+  --color-on-secondary: 255 255 255;
+  --color-tertiary: 60 105 30;
+  --color-on-tertiary: 255 255 255;
+  --color-background: 250 249 248;
+  --color-surface: 250 249 248;
+  --color-surface-dim: 218 217 215;
+  --color-surface-bright: 250 249 248;
+  --color-surface-container-lowest: 255 255 255;
+  --color-surface-container-low: 244 243 241;
+  --color-surface-container: 238 237 235;
+  --color-surface-container-high: 232 231 229;
+  --color-surface-container-highest: 226 225 223;
+  --color-on-surface: 28 28 28;
+  --color-on-surface-variant: 67 72 80;
+  --color-outline: 116 121 130;
+  --color-outline-variant: 196 199 207;
+  --color-error: 186 26 26;
+  --color-syntax-keyword: 153 51 153;
+  --color-syntax-string: 60 130 30;
+  --color-syntax-function: 0 102 165;
+  --color-syntax-comment: 110 117 126;
+  --scrollbar-track: #eeedeb;
+  --scrollbar-thumb: #c4c7cf;
+  --scrollbar-thumb-hover: #8a919b;
+}
+
 @layer base {
   html, body, #root { height: 100%; }
   body {
     @apply bg-background text-on-surface font-body antialiased overflow-hidden;
   }
   ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: #0e0e0e; }
-  ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #404750; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
   .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
@@ -21,8 +83,8 @@
 }
 
 @layer utilities {
-  .syntax-keyword { color: #f0b0ff; }
-  .syntax-string  { color: #a7d387; }
-  .syntax-function{ color: #95ccff; }
-  .syntax-comment { color: #8a919b; }
+  .syntax-keyword { color: rgb(var(--color-syntax-keyword)); }
+  .syntax-string  { color: rgb(var(--color-syntax-string)); }
+  .syntax-function{ color: rgb(var(--color-syntax-function)); }
+  .syntax-comment { color: rgb(var(--color-syntax-comment)); }
 }

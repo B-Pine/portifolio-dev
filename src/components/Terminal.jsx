@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Output from './Output.jsx';
 import AutoComplete from './AutoComplete.jsx';
 import { executeCommand } from '../commands/index.js';
 import { getSuggestions } from '../lib/suggest.js';
 
-const INTRO = [
-  'Initializing environment... done.',
-  'Loading components... done.',
-  "Type 'help' for available commands."
-];
-
 export default function Terminal({ onCommandResult }) {
+  const { t } = useTranslation();
+  const INTRO = [
+    t('terminal.intro'),
+    'Loading components... done.',
+    t('terminal.hint')
+  ];
   const [history, setHistory] = useState([]);   // rendered lines
   const [input, setInput] = useState('');
   const [cmdHistory, setCmdHistory] = useState([]);
@@ -170,7 +171,7 @@ export default function Terminal({ onCommandResult }) {
     <div className="h-full flex flex-col" onClick={focusInput}>
       <div className="flex items-center px-4 h-8 bg-surface gap-6 shrink-0">
         <div className="flex items-center gap-2 border-b-2 border-primary h-full">
-          <span className="text-[11px] font-bold text-primary uppercase tracking-wider">Terminal</span>
+          <span className="text-[11px] font-bold text-primary uppercase tracking-wider">{t('terminal.title', 'Terminal')}</span>
         </div>
         <div className="flex items-center gap-2 h-full opacity-50 cursor-not-allowed">
           <span className="text-[11px] font-bold uppercase tracking-wider">Output</span>

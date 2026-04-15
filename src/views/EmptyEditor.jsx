@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { profile } from '../data/profile.js';
 
 export default function EmptyEditor() {
+  const { t } = useTranslation();
   return (
     <div className="h-full w-full flex flex-col items-center justify-center text-center px-8 select-none">
       <span
@@ -16,7 +18,7 @@ export default function EmptyEditor() {
       </h1>
       {profile.nickname && (
         <div className="syntax-comment font-mono text-xs mt-2">
-          // aka <span className="syntax-function">"{profile.nickname}"</span>
+          // {t('welcome.akA')} <span className="syntax-function">"{profile.nickname}"</span>
         </div>
       )}
 
@@ -27,7 +29,7 @@ export default function EmptyEditor() {
       </div>
 
       <p className="syntax-comment font-mono text-xs mt-10">
-        // type <span className="syntax-function">help</span> in the terminal to begin
+        // {t('welcome.typeHelp')} <span className="syntax-function">help</span> {t('welcome.toGetStarted')}
       </p>
     </div>
   );

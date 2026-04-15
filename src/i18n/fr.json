@@ -1,0 +1,106 @@
+{
+  "topbar": {
+    "language": "Langue",
+    "theme": "Thème",
+    "github": "GitHub",
+    "email": "E-mail"
+  },
+  "sidebar": {
+    "explorer": "Explorateur",
+    "portfolio": "PORTFOLIO"
+  },
+  "statusbar": {
+    "branch": "main",
+    "synced": "Synchronisé",
+    "visitors": "visiteurs"
+  },
+  "terminal": {
+    "placeholder": "Tapez une commande...",
+    "intro": "Initialisation de l'environnement... terminé.",
+    "hint": "Tapez help pour voir les commandes disponibles."
+  },
+  "welcome": {
+    "akA": "alias",
+    "typeHelp": "tapez",
+    "toGetStarted": "dans le terminal ci-dessous pour commencer.",
+    "backendTitle": "Logique Backend",
+    "backendBody": "Construction de systèmes évolutifs avec Django, Node et SQL. Fiabilité et clarté avant tout.",
+    "frontendTitle": "Interfaces Interactives",
+    "frontendBody": "Interfaces React + Tailwind qui ressemblent à de vrais outils — pas à des modèles.",
+    "featured": "Projets en Vedette",
+    "trackRecord": "parcours — essayez de taper",
+    "inTerminal": "dans le terminal pour voir plus de détails",
+    "certifications": "certifications",
+    "awards": "récompenses",
+    "totalWins": "total des réussites"
+  },
+  "about": {
+    "title": "À propos",
+    "comment": "qui, quoi, pourquoi",
+    "try": "essayez",
+    "name": "nom",
+    "alias": "alias",
+    "role": "rôle"
+  },
+  "skills": {
+    "title": "compétences",
+    "legend": "légende",
+    "categories": {
+      "language": "Langages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Bases de données",
+      "tooling": "Outils"
+    },
+    "levels": {
+      "learning": "Apprentissage",
+      "comfortable": "À l'aise",
+      "proficient": "Compétent"
+    }
+  },
+  "education": {
+    "title": "education.yaml",
+    "education": "éducation",
+    "certifications": "certifications",
+    "achievements": "réalisations",
+    "ongoing": "en cours",
+    "completed": "terminé",
+    "verify": "vérifier",
+    "view": "voir",
+    "fields": {
+      "institution": "établissement",
+      "program": "programme",
+      "location": "lieu",
+      "period": "période",
+      "present": "présent",
+      "name": "nom",
+      "issuer": "émetteur",
+      "completedField": "terminé",
+      "issued": "émis",
+      "event": "événement",
+      "placement": "classement",
+      "date": "date"
+    }
+  },
+  "projects": {
+    "title": "projects.json",
+    "entries": "entrées — cliquez pour ouvrir ou exécutez",
+    "grid": "Grille",
+    "directory": "Répertoire",
+    "openHint": "ouvrir la vue détaillée"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "sent": "Message envoyé !",
+    "error": "Échec de l'envoi. Réessayez ou envoyez-moi un e-mail directement."
+  },
+  "empty": {
+    "title": "Portfolio de Bugingo Innocent",
+    "hint": "Ouvrez un fichier depuis la barre latérale pour commencer"
+  }
+}

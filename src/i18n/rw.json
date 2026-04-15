@@ -1,0 +1,106 @@
+{
+  "topbar": {
+    "language": "Ururimi",
+    "theme": "Insanganyamatsiko",
+    "github": "GitHub",
+    "email": "Imeyili"
+  },
+  "sidebar": {
+    "explorer": "Mushakisha",
+    "portfolio": "PORUTOFOLIYO"
+  },
+  "statusbar": {
+    "branch": "main",
+    "synced": "Byahujwe",
+    "visitors": "abasuye"
+  },
+  "terminal": {
+    "placeholder": "Andika itegeko...",
+    "intro": "Gutangiza ibikoresho... byarangiye.",
+    "hint": "Andika help kugira ngo ubone amategeko ahari."
+  },
+  "welcome": {
+    "akA": "azwi nka",
+    "typeHelp": "andika",
+    "toGetStarted": "muri terminali hasi kugira ngo utangire.",
+    "backendTitle": "Imikorere ya Backend",
+    "backendBody": "Kubaka sisitemu zihagije ukoresheje Django, Node, na SQL. Kwizerwa no gusobanuka mbere y'ubuhanga.",
+    "frontendTitle": "Imbonerahamwe Zikora",
+    "frontendBody": "Imbonerahamwe za React + Tailwind zisa n'ibikoresho nyabyo — atari amashusho gusa.",
+    "featured": "Imishinga Yagaragajwe",
+    "trackRecord": "amateka — gerageza wandike",
+    "inTerminal": "muri terminali kugira ngo urebe ibisobanuro birenze",
+    "certifications": "ibyemezo",
+    "awards": "ibihembo",
+    "totalWins": "intsinzi zose"
+  },
+  "about": {
+    "title": "Ibyerekeye",
+    "comment": "ninde, iki, kuki",
+    "try": "gerageza",
+    "name": "izina",
+    "alias": "izina ry'irihimbano",
+    "role": "umurimo"
+  },
+  "skills": {
+    "title": "ubumenyi",
+    "legend": "ibisobanuro",
+    "categories": {
+      "language": "Indimi",
+      "frontend": "Imbonerahamwe",
+      "backend": "Sisitemu",
+      "database": "Ububiko bw'amakuru",
+      "tooling": "Ibikoresho"
+    },
+    "levels": {
+      "learning": "Kwiga",
+      "comfortable": "Byoroshye",
+      "proficient": "Intyoza"
+    }
+  },
+  "education": {
+    "title": "education.yaml",
+    "education": "amashuri",
+    "certifications": "ibyemezo",
+    "achievements": "intsinzi",
+    "ongoing": "biracyakomeza",
+    "completed": "byarangiye",
+    "verify": "emeza",
+    "view": "reba",
+    "fields": {
+      "institution": "ishuri",
+      "program": "porogaramu",
+      "location": "aho",
+      "period": "igihe",
+      "present": "ubu",
+      "name": "izina",
+      "issuer": "uwatanze",
+      "completedField": "byarangiye",
+      "issued": "byatanzwe",
+      "event": "ibiranga",
+      "placement": "umwanya",
+      "date": "itariki"
+    }
+  },
+  "projects": {
+    "title": "projects.json",
+    "entries": "ibyanditswe — kanda kugira ngo ufungure cyangwa ukoreshe",
+    "grid": "Urusobe",
+    "directory": "Ububiko",
+    "openHint": "fungura ibisobanuro"
+  },
+  "contact": {
+    "title": "Twandikire",
+    "name": "Izina",
+    "email": "Imeyili",
+    "message": "Ubutumwa",
+    "send": "Ohereza",
+    "sending": "Kohereza...",
+    "sent": "Ubutumwa bwoherejwe!",
+    "error": "Kohereza byanze. Ongera ugerageze cyangwa wanyandikire imeyili."
+  },
+  "empty": {
+    "title": "Porutofoliyo ya Bugingo Innocent",
+    "hint": "Fungura idosiye uhereye ku rutonde kugira ngo utangire"
+  }
+}

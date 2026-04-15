@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { profile } from '../data/profile.js';
 
@@ -7,6 +8,7 @@ const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function ContactView() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState({ state: 'idle', msg: '' });
   const configured = SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY;
@@ -43,7 +45,7 @@ export default function ContactView() {
     <div className="h-full overflow-auto p-8 font-mono text-sm leading-relaxed">
       <div className="max-w-2xl mx-auto">
         <div className="mb-6">
-          <span className="syntax-keyword text-2xl font-bold font-headline">&lt;Contact /&gt;</span>
+          <span className="syntax-keyword text-2xl font-bold font-headline">&lt;{t('contact.title')} /&gt;</span>
           <div className="h-1 w-16 bg-primary mt-2 rounded-full" />
         </div>
 
@@ -71,7 +73,7 @@ export default function ContactView() {
         <form onSubmit={onSubmit} className="space-y-4 bg-surface-container p-6 rounded-xl">
           <div>
             <label className="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">
-              name
+              {t('contact.name')}
             </label>
             <input
               required
@@ -82,7 +84,7 @@ export default function ContactView() {
           </div>
           <div>
             <label className="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">
-              email
+              {t('contact.email')}
             </label>
             <input
               required
@@ -94,7 +96,7 @@ export default function ContactView() {
           </div>
           <div>
             <label className="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">
-              message
+              {t('contact.message')}
             </label>
             <textarea
               required
@@ -111,7 +113,7 @@ export default function ContactView() {
               disabled={status.state === 'sending'}
               className="bg-primary text-on-primary px-5 py-2 rounded-md text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity disabled:opacity-50"
             >
-              {status.state === 'sending' ? 'sending...' : 'send message'}
+              {status.state === 'sending' ? t('contact.sending') : t('contact.send')}
             </button>
             {status.msg && (
               <span className={

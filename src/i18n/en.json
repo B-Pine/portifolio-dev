@@ -1,0 +1,106 @@
+{
+  "topbar": {
+    "language": "Language",
+    "theme": "Theme",
+    "github": "GitHub",
+    "email": "Email"
+  },
+  "sidebar": {
+    "explorer": "Explorer",
+    "portfolio": "PORTFOLIO"
+  },
+  "statusbar": {
+    "branch": "main",
+    "synced": "Synced",
+    "visitors": "visitors"
+  },
+  "terminal": {
+    "placeholder": "Type a command...",
+    "intro": "Initializing environment... done.",
+    "hint": "Type help to see available commands."
+  },
+  "welcome": {
+    "akA": "aka",
+    "typeHelp": "type",
+    "toGetStarted": "in the terminal below to get started.",
+    "backendTitle": "Backend Logic",
+    "backendBody": "Building scalable systems with Django, Node, and SQL. Reliability and clarity over cleverness.",
+    "frontendTitle": "Interactive Frontends",
+    "frontendBody": "React + Tailwind interfaces that feel like real tools — not templates.",
+    "featured": "Featured Projects",
+    "trackRecord": "track record — try to type",
+    "inTerminal": "in terminal to view more details",
+    "certifications": "certifications",
+    "awards": "awards",
+    "totalWins": "total wins"
+  },
+  "about": {
+    "title": "About",
+    "comment": "who, what, why",
+    "try": "try",
+    "name": "name",
+    "alias": "alias",
+    "role": "role"
+  },
+  "skills": {
+    "title": "skills",
+    "legend": "legend",
+    "categories": {
+      "language": "Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "tooling": "Tooling"
+    },
+    "levels": {
+      "learning": "Learning",
+      "comfortable": "Comfortable",
+      "proficient": "Proficient"
+    }
+  },
+  "education": {
+    "title": "education.yaml",
+    "education": "education",
+    "certifications": "certifications",
+    "achievements": "achievements",
+    "ongoing": "ongoing",
+    "completed": "completed",
+    "verify": "verify",
+    "view": "view",
+    "fields": {
+      "institution": "institution",
+      "program": "program",
+      "location": "location",
+      "period": "period",
+      "present": "present",
+      "name": "name",
+      "issuer": "issuer",
+      "completedField": "completed",
+      "issued": "issued",
+      "event": "event",
+      "placement": "placement",
+      "date": "date"
+    }
+  },
+  "projects": {
+    "title": "projects.json",
+    "entries": "entries — click to open or run",
+    "grid": "Grid",
+    "directory": "Directory",
+    "openHint": "open detail view"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "sent": "Message sent!",
+    "error": "Failed to send. Try again or email me directly."
+  },
+  "empty": {
+    "title": "Bugingo Innocent portfolio",
+    "hint": "Open a file from the sidebar to get started"
+  }
+}

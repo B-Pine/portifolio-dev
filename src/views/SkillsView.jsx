@@ -1,16 +1,16 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { skills } from '../data/skills.ts';
 
-const CATEGORIES = [
-  { key: 'language', label: 'Languages',  icon: 'terminal' },
-  { key: 'frontend', label: 'Frontend',   icon: 'web' },
-  { key: 'backend',  label: 'Backend',    icon: 'dns' },
-  { key: 'database', label: 'Databases',  icon: 'database' },
-  { key: 'tooling',  label: 'Tooling',    icon: 'build' }
+const CATEGORY_ORDER = [
+  { key: 'language', icon: 'terminal' },
+  { key: 'frontend', icon: 'web' },
+  { key: 'backend',  icon: 'dns' },
+  { key: 'database', icon: 'database' },
+  { key: 'tooling',  icon: 'build' }
 ];
 
 const LEVEL_DOTS = { learning: 1, comfortable: 2, proficient: 3 };
-const LEVEL_LABEL = { learning: 'Learning', comfortable: 'Comfortable', proficient: 'Proficient' };
 const LEVEL_TEXT = {
   learning: 'text-secondary',
   comfortable: 'text-primary',
@@ -40,17 +40,18 @@ function Dots({ level }) {
 }
 
 export default function SkillsView() {
+  const { t } = useTranslation();
   return (
     <div className="h-full overflow-auto p-8 font-mono text-sm leading-relaxed">
       <div className="max-w-4xl mx-auto pb-12">
         <div className="mb-2 syntax-comment text-xs">// src / data / skills.ts</div>
         <div className="mb-8">
-          <span className="syntax-keyword text-2xl font-bold font-headline">// skills</span>
+          <span className="syntax-keyword text-2xl font-bold font-headline">// {t('skills.title')}</span>
           <div className="h-1 w-16 bg-primary mt-2 rounded-full" />
         </div>
 
         <div className="space-y-6">
-          {CATEGORIES.map((cat) => {
+          {CATEGORY_ORDER.map((cat) => {
             const items = skills.filter((s) => s.category === cat.key);
             if (items.length === 0) return null;
             return (
@@ -60,7 +61,7 @@ export default function SkillsView() {
                     {cat.icon}
                   </span>
                   <h3 className="font-headline text-sm font-bold text-on-surface uppercase tracking-wider">
-                    {cat.label}
+                    {t(`skills.categories.${cat.key}`)}
                   </h3>
                   <span className="syntax-comment text-[10px]">[ {items.length} ]</span>
                 </div>
@@ -70,7 +71,7 @@ export default function SkillsView() {
                     <div
                       key={s.name}
                       className="group flex items-center gap-2.5 bg-surface-container hover:bg-surface-container-high transition-colors rounded-md pl-3 pr-2.5 py-1.5"
-                      title={LEVEL_LABEL[s.level]}
+                      title={t(`skills.levels.${s.level}`)}
                     >
                       <span className="text-on-surface text-xs">{s.name}</span>
                       <Dots level={s.level} />
@@ -83,19 +84,13 @@ export default function SkillsView() {
         </div>
 
         <div className="mt-10 flex items-center flex-wrap gap-4 text-[10px] uppercase tracking-wider">
-          <span className="syntax-comment">// legend:</span>
-          <span className="flex items-center gap-1.5">
-            <Dots level="learning" />
-            <span className={LEVEL_TEXT.learning}>Learning</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Dots level="comfortable" />
-            <span className={LEVEL_TEXT.comfortable}>Comfortable</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Dots level="proficient" />
-            <span className={LEVEL_TEXT.proficient}>Proficient</span>
-          </span>
+          <span className="syntax-comment">// {t('skills.legend')}:</span>
+          {['learning', 'comfortable', 'proficient'].map((lvl) => (
+            <span key={lvl} className="flex items-center gap-1.5">
+              <Dots level={lvl} />
+              <span className={LEVEL_TEXT[lvl]}>{t(`skills.levels.${lvl}`)}</span>
+            </span>
+          ))}
         </div>
       </div>
     </div>
