@@ -39,6 +39,7 @@ export default function App() {
   const [tabs, setTabs] = useState([WELCOME_TAB]);
   const [activeTabId, setActiveTabId] = useState(WELCOME_TAB.id);
   const [forceDesktop, setForceDesktop] = useState(false);
+  const [terminalCollapsed, setTerminalCollapsed] = useState(false);
   const isMobile = useIsMobile();
 
   function openTab(tab) {
@@ -91,7 +92,14 @@ export default function App() {
       <TopBar tabs={tabs} activeTabId={activeTabId} onSelectTab={setActiveTabId} />
       <div className="flex flex-1 min-h-0 overflow-hidden">
         <Sidebar activeTabId={activeTabId} onOpenFile={onOpenFile} />
-        <div className="flex-1 grid min-w-0 min-h-0" style={{ gridTemplateRows: 'minmax(0, 1fr) 14rem' }}>
+        <div
+          className="flex-1 grid min-w-0 min-h-0"
+          style={{
+            gridTemplateRows: terminalCollapsed
+              ? 'minmax(0, 1fr) 2rem'
+              : 'minmax(0, 1fr) clamp(8rem, 22vh, 14rem)'
+          }}
+        >
           <div className="min-h-0 overflow-hidden">
             <EditorPane
               tabs={tabs}
@@ -102,7 +110,11 @@ export default function App() {
             />
           </div>
           <div className="bg-surface-container-lowest min-h-0 overflow-hidden">
-            <Terminal onCommandResult={handleCommandResult} />
+            <Terminal
+              onCommandResult={handleCommandResult}
+              collapsed={terminalCollapsed}
+              onToggleCollapse={() => setTerminalCollapsed((c) => !c)}
+            />
           </div>
         </div>
       </div>

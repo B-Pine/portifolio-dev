@@ -5,7 +5,7 @@ import AutoComplete from './AutoComplete.jsx';
 import { executeCommand } from '../commands/index.js';
 import { getSuggestions } from '../lib/suggest.js';
 
-export default function Terminal({ onCommandResult }) {
+export default function Terminal({ onCommandResult, collapsed = false, onToggleCollapse }) {
   const { t } = useTranslation();
   const INTRO = [
     t('terminal.intro'),
@@ -185,65 +185,80 @@ export default function Terminal({ onCommandResult }) {
           >
             <span className="material-symbols-outlined" style={{ fontSize: 14 }}>delete</span>
           </button>
+          {onToggleCollapse && (
+            <button
+              type="button"
+              title={collapsed ? 'expand terminal' : 'collapse terminal'}
+              onClick={(e) => { e.stopPropagation(); onToggleCollapse(); }}
+              className="hover:text-primary"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: 14 }}>
+                {collapsed ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+              </span>
+            </button>
+          )}
         </div>
       </div>
 
-      <div
-        ref={scrollerRef}
-        className="flex-1 min-h-0 px-4 pt-4 pb-1 font-mono text-xs leading-relaxed overflow-y-auto"
-      >
-        {showIntro && (
-          <>
-            <div className="mb-1 text-tertiary font-bold">
-              portfolio@pine:~$ <span className="text-on-surface">welcome --init</span>
-            </div>
-            {intro.map((line, i) => (
-              <div key={i} className="text-on-surface-variant animate-fade-in">{line}</div>
+      {!collapsed && (
+        <>
+          <div
+            ref={scrollerRef}
+            className="flex-1 min-h-0 px-4 pt-4 pb-1 font-mono text-xs leading-relaxed overflow-y-auto"
+          >
+            {showIntro && (
+              <>
+                <div className="mb-1 text-tertiary font-bold">
+                  portfolio@pine:~$ <span className="text-on-surface">welcome --init</span>
+                </div>
+                {intro.map((line, i) => (
+                  <div key={i} className="text-on-surface-variant animate-fade-in">{line}</div>
+                ))}
+              </>
+            )}
+
+            {(showIntro && history.length > 0) && <div className="mt-3" />}
+            {history.map((entry, i) => (
+              <Output key={i} entry={entry} />
             ))}
-          </>
-        )}
-
-        {(showIntro && history.length > 0) && <div className="mt-3" />}
-        {history.map((entry, i) => (
-          <Output key={i} entry={entry} />
-        ))}
-      </div>
-
-      {/* Input row sits OUTSIDE the scroller so the autocomplete dropdown is never clipped. */}
-      <div className="shrink-0 px-4 pb-3 font-mono text-xs leading-relaxed">
-        <div ref={inputRowRef} className="relative flex items-center gap-2">
-          <span className="text-tertiary font-bold shrink-0">portfolio@pine:~$</span>
-          <div className="relative flex-1">
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={onKeyDown}
-              spellCheck={false}
-              autoComplete="off"
-              autoCapitalize="off"
-              autoCorrect="off"
-              className="w-full bg-transparent outline-none text-on-surface caret-primary font-mono text-xs"
-              aria-label="terminal input"
-            />
-            <AutoComplete
-              items={input.trim().length > 0 && suggest.suggestions.length > 1 ? suggest.suggestions : []}
-              activeIndex={activeSuggestion}
-              onPick={applySuggestion}
-              anchorRef={inputRowRef}
-            />
-            {/* Inline ghost completion when exactly one match remains. */}
-            {input.trim().length > 0 && suggest.suggestions.length === 1 &&
-              suggest.suggestions[0].length > (input.length - suggest.replaceFrom) && (
-                <span className="pointer-events-none absolute left-0 top-0 font-mono text-xs whitespace-pre text-on-surface-variant/40">
-                  <span className="invisible">{input}</span>
-                  {suggest.suggestions[0].slice(input.length - suggest.replaceFrom)}
-                </span>
-              )}
           </div>
-          <span className="w-2 h-4 bg-primary animate-cursor-blink shrink-0" />
-        </div>
-      </div>
+
+          <div className="shrink-0 px-4 pb-3 font-mono text-xs leading-relaxed">
+            <div ref={inputRowRef} className="relative flex items-center gap-2">
+              <span className="text-tertiary font-bold shrink-0">portfolio@pine:~$</span>
+              <div className="relative flex-1">
+                <input
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  spellCheck={false}
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  className="w-full bg-transparent outline-none text-on-surface caret-primary font-mono text-xs"
+                  aria-label="terminal input"
+                />
+                <AutoComplete
+                  items={input.trim().length > 0 && suggest.suggestions.length > 1 ? suggest.suggestions : []}
+                  activeIndex={activeSuggestion}
+                  onPick={applySuggestion}
+                  anchorRef={inputRowRef}
+                />
+                {input.trim().length > 0 && suggest.suggestions.length === 1 &&
+                  suggest.suggestions[0].length > (input.length - suggest.replaceFrom) && (
+                    <span className="pointer-events-none absolute left-0 top-0 font-mono text-xs whitespace-pre text-on-surface-variant/40">
+                      <span className="invisible">{input}</span>
+                      {suggest.suggestions[0].slice(input.length - suggest.replaceFrom)}
+                    </span>
+                  )}
+              </div>
+              <span className="w-2 h-4 bg-primary animate-cursor-blink shrink-0" />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
+

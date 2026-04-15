@@ -8,7 +8,7 @@ export function useVisitorCount() {
   useEffect(() => {
     if (!CODE) return;
     let cancelled = false;
-    fetch(`https://${CODE}.goatcounter.com/counter//TOTAL.json`)
+    fetch(`https://${CODE}.goatcounter.com/counter/TOTAL.json`)
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
         if (!cancelled && data && typeof data.count_unique !== 'undefined') {
