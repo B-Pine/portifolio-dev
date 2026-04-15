@@ -3,6 +3,7 @@ import WelcomeView from '../views/WelcomeView.jsx';
 import EmptyEditor from '../views/EmptyEditor.jsx';
 import AboutView from '../views/AboutView.jsx';
 import SkillsView from '../views/SkillsView.jsx';
+import EducationView from '../views/EducationView.jsx';
 import ProjectsView from '../views/ProjectsView.jsx';
 import ProjectDetailView from '../views/ProjectDetailView.jsx';
 import ContactView from '../views/ContactView.jsx';
@@ -57,6 +58,7 @@ function ViewForTab({ tab, onOpenProject }) {
     case 'welcome':  return <WelcomeView />;
     case 'about':    return <AboutView />;
     case 'skills':   return <SkillsView />;
+    case 'education':return <EducationView />;
     case 'projects': return <ProjectsView onOpenProject={onOpenProject} />;
     case 'project':  return <ProjectDetailView project={tab.payload} />;
     case 'contact':  return <ContactView />;

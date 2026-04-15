@@ -19,6 +19,7 @@ const FILE_ID_TO_COMMAND = {
   about: 'about',
   skills: 'skills',
   projects: 'projects',
+  education: 'education',
   contact: 'contact'
 };
 

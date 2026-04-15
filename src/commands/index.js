@@ -1,15 +1,16 @@
 // Command registry. To add a new command:
 //   1. create src/commands/<name>.jsx exporting { name, description, run, ... }
 //   2. import + add it below.
-import help     from './help.jsx';
-import about    from './about.jsx';
-import skills   from './skills.jsx';
-import projects from './projects.jsx';
-import open     from './open.jsx';
-import contact  from './contact.jsx';
-import clear    from './clear.js';
+import help      from './help.jsx';
+import about     from './about.jsx';
+import skills    from './skills.jsx';
+import projects  from './projects.jsx';
+import education from './education.jsx';
+import open      from './open.jsx';
+import contact   from './contact.jsx';
+import clear     from './clear.js';
 
-export const commands = [help, about, skills, projects, open, contact, clear];
+export const commands = [help, about, skills, projects, education, open, contact, clear];
 
 export const registry = Object.fromEntries(commands.map((c) => [c.name, c]));
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { profile } from '../data/profile.js';
 import projects from '../data/projects.json';
+import { certifications, achievements } from '../data/education.js';
 
 export default function WelcomeView() {
   return (
@@ -76,6 +77,41 @@ export default function WelcomeView() {
           <div className="syntax-comment text-xs mt-3">
             // try: <span className="syntax-function">projects</span> ·{' '}
             <span className="syntax-function">open {projects[0]?.slug}</span>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <div className="syntax-comment text-xs mb-3">
+            // track record — try to type <span className="syntax-function">education</span> in terminal to view more details
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="bg-surface-container rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="material-symbols-outlined text-secondary" style={{ fontSize: 16 }}>verified</span>
+                <span className="syntax-comment text-[11px] uppercase tracking-wider">certifications</span>
+              </div>
+              <div className="text-2xl font-bold text-primary font-headline">
+                {certifications.length}<span className="text-tertiary">+</span>
+              </div>
+            </div>
+            <div className="bg-surface-container rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="material-symbols-outlined text-tertiary" style={{ fontSize: 16 }}>emoji_events</span>
+                <span className="syntax-comment text-[11px] uppercase tracking-wider">awards</span>
+              </div>
+              <div className="text-2xl font-bold text-primary font-headline">
+                {achievements.length}<span className="text-tertiary">+</span>
+              </div>
+            </div>
+            <div className="bg-surface-container rounded-xl p-4 col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="material-symbols-outlined text-primary" style={{ fontSize: 16 }}>workspace_premium</span>
+                <span className="syntax-comment text-[11px] uppercase tracking-wider">total wins</span>
+              </div>
+              <div className="text-2xl font-bold text-primary font-headline">
+                {certifications.length + achievements.length}<span className="text-tertiary">+</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

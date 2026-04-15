@@ -6,6 +6,7 @@ const FILES = [
   { id: 'about',    label: 'about.md',     icon: 'info',        iconClass: 'text-primary' },
   { id: 'projects', label: 'projects.json',icon: 'data_object', iconClass: 'text-yellow-500' },
   { id: 'skills',   label: 'skills.ts',    icon: 'code',        iconClass: 'text-primary' },
+  { id: 'education',label: 'education.yaml', icon: 'school',    iconClass: 'text-secondary' },
   { id: 'contact',  label: 'contact.html', icon: 'mail',        iconClass: 'text-orange-500' }
 ];
 

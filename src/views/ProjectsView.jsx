@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import projects from '../data/projects.json';
 
 const VIEWS = [
-  { id: 'list', icon: 'view_agenda', label: 'List' },
+  { id: 'list', icon: 'grid_view', label: 'Grid' },
   { id: 'tree', icon: 'folder_open', label: 'Directory' }
 ];
 
@@ -11,7 +11,7 @@ export default function ProjectsView({ onOpenProject }) {
 
   return (
     <div className="h-full overflow-auto p-8 font-mono text-sm leading-relaxed">
-      <div className="max-w-3xl mx-auto pb-12">
+      <div className="max-w-6xl mx-auto pb-12">
         <div className="flex items-start justify-between mb-6 gap-4">
           <div>
             <span className="syntax-keyword text-2xl font-bold font-headline">// projects.json</span>
@@ -54,13 +54,13 @@ export default function ProjectsView({ onOpenProject }) {
 
 function ListView({ onOpen }) {
   return (
-    <div className="space-y-3">
+    <div className="grid gap-3 grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {projects.map((p, i) => (
         <button
           type="button"
           key={p.slug}
           onClick={() => onOpen(p.slug)}
-          className="w-full text-left bg-surface-container hover:bg-surface-container-high p-5 rounded-xl transition-colors group"
+          className="h-full flex flex-col text-left bg-surface-container hover:bg-surface-container-high p-5 rounded-xl transition-colors group"
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-3">
@@ -84,7 +84,7 @@ function ListView({ onOpen }) {
               </span>
             ))}
           </div>
-          <div className="syntax-comment text-[10px] mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="syntax-comment text-[10px] mt-auto pt-3 opacity-0 group-hover:opacity-100 transition-opacity">
             // open {p.slug}
           </div>
         </button>
