@@ -23,16 +23,31 @@ const FILE_ID_TO_COMMAND = {
   contact: 'contact'
 };
 
+const MOBILE_BREAKPOINT = 500;
+const NARROW_BREAKPOINT = 900;
+
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(
-    typeof window !== 'undefined' && window.innerWidth < 900
+    typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT
   );
   useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 900);
+    const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
   return isMobile;
+}
+
+function useIsNarrow() {
+  const [narrow, setNarrow] = useState(
+    typeof window !== 'undefined' && window.innerWidth < NARROW_BREAKPOINT
+  );
+  useEffect(() => {
+    const onResize = () => setNarrow(window.innerWidth < NARROW_BREAKPOINT);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return narrow;
 }
 
 export default function App() {
@@ -41,6 +56,12 @@ export default function App() {
   const [forceDesktop, setForceDesktop] = useState(false);
   const [terminalCollapsed, setTerminalCollapsed] = useState(false);
   const isMobile = useIsMobile();
+  const isNarrow = useIsNarrow();
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(isNarrow);
+
+  useEffect(() => {
+    setSidebarCollapsed(isNarrow);
+  }, [isNarrow]);
 
   function openTab(tab) {
     setTabs((current) => {
@@ -91,7 +112,12 @@ export default function App() {
     <div className="h-full flex flex-col bg-background text-on-surface overflow-hidden">
       <TopBar tabs={tabs} activeTabId={activeTabId} onSelectTab={setActiveTabId} />
       <div className="flex flex-1 min-h-0 overflow-hidden">
-        <Sidebar activeTabId={activeTabId} onOpenFile={onOpenFile} />
+        <Sidebar
+          activeTabId={activeTabId}
+          onOpenFile={onOpenFile}
+          collapsed={sidebarCollapsed}
+          onToggleCollapse={() => setSidebarCollapsed((c) => !c)}
+        />
         <div
           className="flex-1 grid min-w-0 min-h-0"
           style={{

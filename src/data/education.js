@@ -51,5 +51,14 @@ export const achievements = [
     date: 'March 2026',
     url: '',
     note: 'Won the Hatana Bootcamp & Hackathon organized by the MasterCard Foundation Program (MCFP) in collaboration with the University of Rwanda.'
+  },
+  {
+    name: 'Umurava AI Hackathon',
+    event: 'Umurava',
+    placement: '🥉 4th Place — Finalist',
+    year: '2026',
+    date: 'April 2026',
+    url: '',
+    note: 'Built a high-volume applications management system that helps HR managers handle large numbers of applicants efficiently using AI-assisted screening.'
   }
 ];
