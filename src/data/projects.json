@@ -73,6 +73,26 @@
     "status": "live"
   },
   {
+    "slug": "icyuzi",
+    "name": "Icyuzi.rw",
+    "tagline": "Online marketplace giving stores and shops in Rwanda product visibility.",
+    "description": "Icyuzi.rw is an online platform where stores and shops list their products for visibility to a wider audience. I worked on it as a backend engineer — designing scalable APIs with Django, modeling product/store relationships in MySQL, and building services that handle large volumes of product data, search, and store management.",
+    "techStack": ["Python", "Django", "MySQL", "REST API"],
+    "features": [
+      "Scalable backend handling large volumes of product and store data",
+      "Multi-store product listing with rich metadata",
+      "Store profile and inventory management APIs",
+      "Search and filtering across high-volume listings",
+      "Role-based access for shop owners and admins"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://icyuzi.rw",
+    "githubUrl": null,
+    "year": 2025,
+    "status": "live",
+    "role": "Backend Engineer"
+  },
+  {
     "slug": "portfolio-dev",
     "name": "Portfolio.dev",
     "tagline": "This site — an IDE-style interactive portfolio.",

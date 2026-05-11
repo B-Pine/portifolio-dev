@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import TopBar from './components/TopBar.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import EditorPane from './components/EditorPane.jsx';
@@ -55,6 +55,11 @@ export default function App() {
   const [activeTabId, setActiveTabId] = useState(WELCOME_TAB.id);
   const [forceDesktop, setForceDesktop] = useState(false);
   const [terminalCollapsed, setTerminalCollapsed] = useState(false);
+  const [terminalHeight, setTerminalHeight] = useState(() => {
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('terminalHeight') : null;
+    return stored ? parseInt(stored, 10) : 224;
+  });
+  const gridRef = useRef(null);
   const isMobile = useIsMobile();
   const isNarrow = useIsNarrow();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(isNarrow);
@@ -62,6 +67,34 @@ export default function App() {
   useEffect(() => {
     setSidebarCollapsed(isNarrow);
   }, [isNarrow]);
+
+  useEffect(() => {
+    localStorage.setItem('terminalHeight', String(terminalHeight));
+  }, [terminalHeight]);
+
+  function startResize(e) {
+    e.preventDefault();
+    const startY = e.clientY;
+    const startHeight = terminalHeight;
+    const gridRect = gridRef.current?.getBoundingClientRect();
+    const maxHeight = gridRect ? gridRect.height - 100 : 800;
+
+    function onMove(ev) {
+      const delta = startY - ev.clientY;
+      const next = Math.min(Math.max(80, startHeight + delta), maxHeight);
+      setTerminalHeight(next);
+    }
+    function onUp() {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.body.style.cursor = 'ns-resize';
+    document.body.style.userSelect = 'none';
+  }
 
   function openTab(tab) {
     setTabs((current) => {
@@ -119,11 +152,12 @@ export default function App() {
           onToggleCollapse={() => setSidebarCollapsed((c) => !c)}
         />
         <div
+          ref={gridRef}
           className="flex-1 grid min-w-0 min-h-0"
           style={{
             gridTemplateRows: terminalCollapsed
               ? 'minmax(0, 1fr) 2rem'
-              : 'minmax(0, 1fr) clamp(8rem, 22vh, 14rem)'
+              : `minmax(0, 1fr) ${terminalHeight}px`
           }}
         >
           <div className="min-h-0 overflow-hidden">
@@ -135,7 +169,14 @@ export default function App() {
               onOpenProject={(slug) => openByCommand('open', slug)}
             />
           </div>
-          <div className="bg-surface-container-lowest min-h-0 overflow-hidden">
+          <div className="bg-surface-container-lowest min-h-0 overflow-hidden relative">
+            {!terminalCollapsed && (
+              <div
+                onMouseDown={startResize}
+                className="absolute top-0 left-0 right-0 h-1 cursor-ns-resize hover:bg-primary/40 active:bg-primary/60 z-20 transition-colors"
+                title="drag to resize"
+              />
+            )}
             <Terminal
               onCommandResult={handleCommandResult}
               collapsed={terminalCollapsed}

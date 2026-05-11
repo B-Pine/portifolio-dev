@@ -4,7 +4,9 @@ import projects from '../data/projects.json';
 
 export default function ProjectsView({ onOpenProject }) {
   const { t } = useTranslation();
-  const [view, setView] = useState('list');
+  const [view, setView] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth < 768 ? 'tree' : 'list'
+  );
   const VIEWS = [
     { id: 'list', icon: 'grid_view', label: t('projects.grid') },
     { id: 'tree', icon: 'folder_open', label: t('projects.directory') }
