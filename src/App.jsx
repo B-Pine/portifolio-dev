@@ -54,7 +54,7 @@ export default function App() {
   const [tabs, setTabs] = useState([WELCOME_TAB]);
   const [activeTabId, setActiveTabId] = useState(WELCOME_TAB.id);
   const [forceDesktop, setForceDesktop] = useState(false);
-  const [terminalCollapsed, setTerminalCollapsed] = useState(false);
+  const [terminalCollapsed, setTerminalCollapsed] = useState(true);
   const [terminalHeight, setTerminalHeight] = useState(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('terminalHeight') : null;
     return stored ? parseInt(stored, 10) : 224;
