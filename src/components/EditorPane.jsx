@@ -8,7 +8,7 @@ import ProjectsView from '../views/ProjectsView.jsx';
 import ProjectDetailView from '../views/ProjectDetailView.jsx';
 import ContactView from '../views/ContactView.jsx';
 
-export default function EditorPane({ tabs, activeTabId, onSelectTab, onCloseTab, onOpenProject }) {
+export default function EditorPane({ tabs, activeTabId, onSelectTab, onCloseTab, onOpenProject, onOpenFile }) {
   const active = tabs.find((t) => t.id === activeTabId);
 
   return (
@@ -47,16 +47,16 @@ export default function EditorPane({ tabs, activeTabId, onSelectTab, onCloseTab,
       <div className="flex-1 min-h-0 overflow-hidden">
         {tabs.length === 0
           ? <EmptyEditor />
-          : active && <ViewForTab tab={active} onOpenProject={onOpenProject} />}
+          : active && <ViewForTab tab={active} onOpenProject={onOpenProject} onOpenFile={onOpenFile} />}
       </div>
     </main>
   );
 }
 
-function ViewForTab({ tab, onOpenProject }) {
+function ViewForTab({ tab, onOpenProject, onOpenFile }) {
   switch (tab.kind) {
     case 'welcome':  return <WelcomeView />;
-    case 'about':    return <AboutView />;
+    case 'about':    return <AboutView onOpenProject={onOpenProject} onOpenFile={onOpenFile} />;
     case 'skills':   return <SkillsView />;
     case 'education':return <EducationView />;
     case 'projects': return <ProjectsView onOpenProject={onOpenProject} />;

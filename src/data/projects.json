@@ -1,5 +1,68 @@
 [
   {
+    "slug": "sigeth",
+    "name": "SIGETH — Hotel & Guest House Management",
+    "tagline": "End-to-end guest management plus a bar & restaurant point-of-sales suite.",
+    "description": "SIGETH is a hotel and guest house management system I built and deployed with SYSIGETH Ltd. It covers the full guest lifecycle — from check-in through check-out — alongside a Sales application that runs the on-site bars and restaurant. The hotel module runs on a networked PostgreSQL database so multiple stations stay in sync, while a standalone single-POS setup falls back to SQLite. The system is live at Poolside View Guest House (Kibagabaga, Kigali), where I was part of the team that installed and configured it on site.",
+    "techStack": ["Django REST", "React", "TypeScript", "Electron", "PostgreSQL", "SQLite"],
+    "features": [
+      "Guest management — check-in, stay tracking, and check-out",
+      "Point-of-sales application for bars and restaurant orders",
+      "Networked PostgreSQL for multi-station hotel deployments",
+      "SQLite fallback for standalone single-POS setups",
+      "Real-time sales tracking and reporting",
+      "Deployed and configured on site at Poolside View Guest House"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://sigeth.com",
+    "githubUrl": null,
+    "year": 2026,
+    "status": "live",
+    "role": "Software Developer"
+  },
+  {
+    "slug": "sigeth-supermarket",
+    "name": "SIGETH Supermarket POS",
+    "tagline": "Barcode point-of-sales and inventory desktop app for supermarkets.",
+    "description": "A standalone barcode POS and inventory management desktop app in the SIGETH suite, currently in active development at SYSIGETH Ltd. Products are registered by barcode — auto-generated in-store GS1 codes or scanned manufacturer EAN/UPC — with printable Code 128 labels. Ordering runs through a Scanner POS: scan a barcode, look it up, add to cart, and checkout. All stock movement runs inside atomic transactions so inventory can never go negative or drift.",
+    "techStack": ["Django REST", "React", "TypeScript", "Electron", "SQLite"],
+    "features": [
+      "Barcode product registration (in-store GS1 codes or scanned EAN/UPC)",
+      "Printable Code 128 product labels",
+      "Scanner POS — scan, look up, add to cart, checkout",
+      "Atomic stock transactions (stock-in and checkout never drift)",
+      "Dashboard with live counts and daily sales history",
+      "Offline, single-machine desktop deployment"
+    ],
+    "screenshots": [],
+    "liveUrl": "",
+    "githubUrl": null,
+    "year": 2026,
+    "status": "in-progress",
+    "role": "Software Developer"
+  },
+  {
+    "slug": "idafleet",
+    "name": "IDA Fleet",
+    "tagline": "Fleet management & logistics platform — mobile, web, and API.",
+    "description": "IDA Fleet (ida.rw) is a fleet management and logistics platform for IDA Ltd. that helps businesses track vehicles, manage shipments, and keep expenses and customers under control. It spans a Flutter mobile app for drivers and field operations, a React web dashboard for admins, and a Django REST backend tying everything together.",
+    "techStack": ["Flutter", "Django REST", "React", "PostgreSQL"],
+    "features": [
+      "Real-time vehicle and fleet tracking",
+      "Shipment and delivery management",
+      "Expense and cost tracking per vehicle and trip",
+      "Customer management",
+      "Flutter mobile app for drivers and field operations",
+      "React admin dashboard backed by a Django REST API"
+    ],
+    "screenshots": [],
+    "liveUrl": "https://ida.rw",
+    "githubUrl": null,
+    "year": 2026,
+    "status": "in-progress",
+    "role": "Full-Stack Developer"
+  },
+  {
     "slug": "pulse",
     "name": "Pulse",
     "tagline": "Real-time donor coordination — mobile app (planned).",

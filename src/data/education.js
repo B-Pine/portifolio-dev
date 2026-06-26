@@ -50,7 +50,7 @@ export const achievements = [
     year: '2026',
     date: 'March 2026',
     url: '',
-    note: 'Won the Hatana Bootcamp & Hackathon organized by the MasterCard Foundation Program (MCFP) in collaboration with the University of Rwanda.'
+    note: 'Won the Hatana Bootcamp & Hackathon organized by the MasterCard Foundation Program (MCFP) in collaboration with the University of Rwanda — awarded a $5,000 Scholars Entrepreneurship Fund (SEF 2.0) grant.'
   },
   {
     name: 'Umurava AI Hackathon',

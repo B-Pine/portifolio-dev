@@ -167,6 +167,7 @@ export default function App() {
               onSelectTab={setActiveTabId}
               onCloseTab={closeTab}
               onOpenProject={(slug) => openByCommand('open', slug)}
+              onOpenFile={onOpenFile}
             />
           </div>
           <div className="bg-surface-container-lowest min-h-0 overflow-hidden relative">
